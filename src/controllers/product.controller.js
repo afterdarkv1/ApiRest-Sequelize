@@ -9,8 +9,9 @@ export const createProduct =  async (req, res) => {
      price,
      description,
      brandId,
-     userId
+     userId,
     });
+
     res.json(newProduct);
   } catch (error) {
     return res.status(500).json({ message: error.message });
@@ -20,7 +21,7 @@ export const createProduct =  async (req, res) => {
 export const getProducts = async (req, res) => {
   try {
     const products = await Product.findAll({
-      attributes: ["id", "brandId", "title", "price", "description"],
+      attributes: ["id", "title", "price", "description", "brandId", "userId"],
       order: [["id", "DESC"]],
     });
     res.json(products);
@@ -34,7 +35,7 @@ export  const updateProduct = async (req, res) => {
   try {
  
     const product = await Product.findOne({
-      attributes: [ "title","price", "description", "brandId", "id"],
+      attributes: [ "id","title","price", "description", "brandId", "userId" ],
       where: { id },
     });
 
@@ -66,7 +67,7 @@ export const getProduct = async (req, res) => {
   try {
     const product = await Product.findOne({
       where: { id },
-      attributes: ["id", "brandId",  "title",  "price", "description"],
+      attributes: ["id", "title",  "price", "description", "brandId","userId"],
     });
     res.json(product);
   } catch (error) {

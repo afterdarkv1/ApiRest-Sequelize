@@ -23,7 +23,7 @@ export const User = database.define(
 );
 
 User.hasMany(Product, {
-  foreignkey: "UserId",
+  foreignkey: "userId",
   sourceKey: "id",
 });
-Product.belongsTo(User, { foreignkey: "UserId", targetId: "id" });
+Product.belongsTo(User, { foreignkey: "userId", targetId: "id" });

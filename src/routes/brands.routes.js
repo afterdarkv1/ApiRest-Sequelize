@@ -4,7 +4,6 @@ import { createBrand, deleteBrand, getBrand, getBrandProducts, getBrands, update
 
 const router = Router();
 
-// Routes
 router.post("/", createBrand);
 router.get("/", getBrands);
 router.put("/:id", updateBrand);
