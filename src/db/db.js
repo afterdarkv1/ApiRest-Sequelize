@@ -1,14 +1,21 @@
 import Sequelize from "sequelize";
 import dotenv from "dotenv";
+import {
+  DB_DATABASE,
+  DB_HOST,
+  DB_PASSWORD,
+  DB_PORT,
+  DB_USER,
+  DB_DIALECT
+} from "../config.js";
 
 dotenv.config();
 
-const { DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, DB_DIALECT } = process.env;
-
-const database = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
+export const database = new Sequelize(DB_DATABASE, DB_USER, DB_PASSWORD, {
   host: DB_HOST,
   dialect: DB_DIALECT,
-
+  port: DB_PORT,
 });
 
 export default database;
+
