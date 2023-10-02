@@ -1,0 +1,24 @@
+TABLE brand {
+  id integer [primary key]
+  name varchar
+  user_id integer
+} 
+
+TABLE product {
+  id integer [primary key]
+  title varchar
+  description varchar(300)
+  price int
+  brand_id integer
+  user_id integer
+}
+
+TABLE user {
+  id integer [primary key]
+  username varchar
+  gmail varchar
+  created_at timestamp
+}
+
+Ref: product.user_id > user.id 
+Ref: product.user_id > brand.id 
