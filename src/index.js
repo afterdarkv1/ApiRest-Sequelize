@@ -4,8 +4,8 @@ import database from "./db/db.js";
 
 async function main() {
   await database.sync();
-  app.listen(4000);
-  console.log("Server on port 4000");
+  app.listen(4002);
+  console.log("Server on port 4002");
 }
 
 main();
