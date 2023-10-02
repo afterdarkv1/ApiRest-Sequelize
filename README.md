@@ -9,7 +9,7 @@ Basic REST API in which you can do GET, POST, PACTH and DELETE, testing can be d
 
 ## Website Railway
 
-[RestApi](https://restapi-nodejs-express-mysql-production.up.railway.app/api/products)
+[RestApi](https://apirest-sequelize-production.up.railway.app/api/products)
 
 
 ## Configuration to view the website locally
